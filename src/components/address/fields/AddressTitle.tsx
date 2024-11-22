@@ -1,6 +1,6 @@
 import React from "react";
 import {observer} from "mobx-react-lite";
-import {useAddressContext} from "../../adress-store-context.ts";
+import {useAddressContext} from "../../../store/components/adress-store-context.ts";
 
 export const AddressTitle: React.FC = observer(() => {
     const store = useAddressContext()

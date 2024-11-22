@@ -1,7 +1,10 @@
 import {makeAutoObservable} from "mobx";
 import React from "react";
 
-export class AddrStoreItem {
+// can be implemented as well as
+// https://mobx.js.org/defining-data-stores.html#example-domain-store
+
+export class AddressItemStore {
     public id
     public name = ''
     public country = ''

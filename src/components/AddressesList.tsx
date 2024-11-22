@@ -1,5 +1,5 @@
 import React from "react";
-import {AddressStoreWrapper} from "./AddressStoreWrapper.tsx";
+import {AddressStoreWrapper} from "../store/components/AddressStoreWrapper.tsx";
 import {AddressDBItem} from "./AddressesDatabase.tsx";
 
 type AddressesListProps = {
@@ -11,11 +11,11 @@ type AddressesListProps = {
 export const AddressesList: React.FC<AddressesListProps> = ({addresses, addAddress, removeAddress}) => {
     return <div>
         {addresses.map(address => {
-            return <div key={'_item' + address.id} className={'card'}>
-                <AddressStoreWrapper key={address.id} name={address.name}/>
+            return <div key={'_item' + address.recordId} className={'card'}>
+                <AddressStoreWrapper initialName={address.initialName}/>
 
                 <div className={'card-actions'}>
-                    <button onClick={() => removeAddress(address.id)} className={'danger'}>Delete</button>
+                    <button onClick={() => removeAddress(address.recordId)} className={'danger'}>Remove</button>
                 </div>
             </div>
         })}

@@ -2,16 +2,16 @@ import React, {useCallback, useState} from "react";
 import {AddressesList} from "./AddressesList.tsx";
 
 export type AddressDBItem = {
-    id: string,
-    name: string,
+    recordId: string,
+    initialName: string,
 }
 
 export const AddressesDatabase: React.FC = () => {
 
     const [addresses, setAddresses] = useState<AddressDBItem[]>([
-        {id: '1', name: 'Main'},
-        {id: '2', name: 'Secondary'},
-        {id: '3', name: 'Tertiary'}
+        {recordId: '1', initialName: 'Main'},
+        {recordId: '2', initialName: 'Secondary'},
+        {recordId: '3', initialName: 'Tertiary'}
     ])
 
     const handleAddNew = useCallback(() => {
@@ -23,12 +23,12 @@ export const AddressesDatabase: React.FC = () => {
         console.log('+++ Create new record', newName)
 
         const id = Math.random().toString(16).slice(2)
-        setAddresses([...addresses, {id, name: newName}])
+        setAddresses([...addresses, {recordId: id, initialName: newName}])
     }, [addresses])
 
     const handleRemove = useCallback((id: string) => {
         console.log('--- Remove', id)
-        setAddresses((v) => v.filter(addr => addr.id !== id))
+        setAddresses((v) => v.filter(addr => addr.recordId !== id))
     }, [])
 
     return <div>
