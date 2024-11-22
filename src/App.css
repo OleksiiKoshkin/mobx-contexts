@@ -1,0 +1,62 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: left;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 6px 18px #00000020;
+    margin: 1rem 0;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.card-content {
+    padding: 2rem 2rem 0 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.card-content table {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.card-content td:last-child {
+    text-align: right;
+    color: #bbb;
+}
+
+.card-content label {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.card-content label span {
+    width: 100px;
+    white-space: nowrap;
+    text-align: right;
+    font-size: .9rem;
+}
+
+.card-content label input {
+    display: flex;
+    flex-grow: 2;
+    margin-left: 1rem;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 2rem 1rem 0;
+}
+
